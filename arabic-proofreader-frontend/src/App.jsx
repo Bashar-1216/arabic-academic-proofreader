@@ -33,7 +33,6 @@ function App() {
 
   const handleFileUpload = async () => {
     if (!selectedFile) return
-
     setIsLoading(true)
     setUploadProgress(0)
     
