@@ -54,13 +54,16 @@ def upload_file():
             if not extraction_result['success']:
                 return jsonify({'error': extraction_result['error']}), 500
             
+            # CORRECTED CODE
+            final_metadata = file_info
+
+            final_metadata.update(extraction_result.get('metadata', {}))
+
             return jsonify({
                 'success': True,
-                'filename': filename,
                 'text': extraction_result['text'],
-                'metadata': extraction_result.get('metadata', {}),
-                'stats': extraction_result.get('stats', {}),
-                'file_info': file_info
+                'metadata': final_metadata, # <-- The corrected key
+                'stats': extraction_result.get('stats', {})
             })
             
         except Exception as e:
