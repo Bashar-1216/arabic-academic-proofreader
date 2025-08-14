@@ -1,0 +1,14 @@
+{
+  "framework": "vite",
+  "buildCommand": "pnpm run build",
+  "outputDirectory": "dist",
+  "installCommand": "pnpm install",
+  "devCommand": "pnpm run dev",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+
