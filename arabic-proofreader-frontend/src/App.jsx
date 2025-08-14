@@ -89,9 +89,15 @@ function App() {
       } else {
         alert(result.error || 'خطأ في التدقيق')
       }
-    } catch (error) {
-      alert('خطأ في الاتصال بالخادم')
-      console.error('Proofread error:', error)
+    }  catch (error) {
+  // Read the specific error message from the backend's JSON response
+      const errorMessage = error.response?.data?.error || 'خطأ في الاتصال بالخادم';
+  
+  // Display the real reason for the failure!
+      alert(errorMessage);
+  
+      console.error('Upload error:', error.response || error);
+
     } finally {
       setIsLoading(false)
     }
