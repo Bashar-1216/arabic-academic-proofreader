@@ -20,7 +20,7 @@ function App() {
   const [uploadProgress, setUploadProgress] = useState(0)
 
   // API base URL
-  const API_BASE = 'http://localhost:5000/api'
+  const API_BASE = 'https://arabic-academic-proofreader.onrender.com/api'
 
   const handleFileSelect = (event) => {
     const file = event.target.files[0]
